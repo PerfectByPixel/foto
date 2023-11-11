@@ -157,21 +157,59 @@
 							<header>
 								<h2 class="fs-heading ff-ralewy text-white">Send us a message</h2>
 							</header>
-							<form action="contact-form.php" class="flow">
+							<form id="myForm" action="https://formsubmit.co/konrad.nielub@wp.pl" class="flow" method="POST">
 								<div>
-									<!-- <label aria-hidden="true" for="name">Your Name</label> -->
-									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="name" name="name" placeholder="Your Name">
+									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="name" name="name" placeholder="Your Name" required>
 								</div>
 								<div class="spac-input">
-									<!-- <label for="name">Email address</label> -->
-									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="email" name="email" placeholder="Email">
+									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="email" name="email" placeholder="Email" required>
 								</div>
 								<div class="spac-input">
-									<!-- <label for="name">Comment</label> -->
-									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="comment" name="comment" placeholder="Comment">
+									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="comment" name="comment" placeholder="Comment" required>
 								</div>
 								<button class="text-dark ff-bebasneue text-dark bg-light-green fs-button border-none margin-block-start-5rem" type="submit" data-type="button-primary">SEND TO US!</button>
 							</form>
+							<div id="message"></div>
+							<script>
+								$(document).ready(function () {
+									$('#myForm').submit(function (event) {
+										event.preventDefault();
+							
+										$.ajax({
+											method: 'POST',
+											url: 'https://formsubmit.co/ajax/konrad.nielub@wp.pl',
+											dataType: 'json',
+											accepts: 'application/json',
+											data: {
+												name: $('#name').val(),
+												email: $('#email').val(),
+												comment: $('#comment').val()
+											},
+											success: function (data) {
+												// Display success message
+												$('#message').html('<p class="success-message">Form submitted successfully!</p>');
+												// You can add further actions here if needed.
+											},
+											error: function (err) {
+												// Display error message
+												$('#message').html('<p class="error-message">Error submitting form. Please check your data and try again.</p>');
+												console.log(err);
+												// Handle errors here.
+											}
+										});
+									});
+								});
+							</script>
+							
+							<style>
+								.success-message {
+									color: green;
+								}
+							
+								.error-message {
+									color: red;
+								}
+							</style>
 						</div>
 						<section class="flow | move-bottom get-touch-box">
 							<header>
