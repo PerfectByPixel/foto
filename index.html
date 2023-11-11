@@ -150,14 +150,14 @@
 				</div>
 			</section>
 
-			<section id="contact" class="padding-block-end-8rem padding-block-start-2rem">
+			<section class="padding-block-end-8rem padding-block-start-2rem">
 				<div class="container">
 					<div class="even-columns">
 						<div class="send-message-box move-right | flow">
 							<header>
 								<h2 class="fs-heading ff-ralewy text-white">Send us a message</h2>
 							</header>
-							<form id="#myForm" class="flow" method="POST">
+							<form action="contact-form.php" class="flow" method="POST">
 								<div>
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="name" name="name" placeholder="Your Name" required>
 								</div>
@@ -168,30 +168,10 @@
 								<div class="spac-input">
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="comment" name="comment" placeholder="Comment" required>
 								</div>
+								<input type="hidden" name="redirect" value="">
 								<button class="text-dark ff-bebasneue text-dark bg-light-green fs-button border-none margin-block-start-5rem" type="submit" data-type="button-primary">SEND TO US!</button>
+								<div class="form-results d-none"></div>
 							</form>
-							
-							<div id="message-container"></div>
-							
-							<script>
-								$(document).ready(function () {
-    						$('#myForm').submit(function (event) {
-							$.ajax({
-									method: 'POST',
-									url: 'https://formsubmit.co/ajax/konrad.nielub@wp.pl',
-									dataType: 'json',
-									accepts: 'application/json',
-									data: {
-										name: $('#name').val(),
-										email: $('#email').val(),
-										comment: $('#comment').val()
-									},
-									success: (data) => console.log(data),
-									error: (err) => console.log(err)
-									});
-								});
-							});
-							</script>
 							
 						</div>
 						<section class="flow | move-bottom get-touch-box">

@@ -5,10 +5,10 @@ if( ! empty( $_POST['email'] ) ) {
 	$enable_smtp = 'yes'; // yes OR no
 
 	// Email Receiver Address
-	$receiver_email = 'dejrexs@gmail.com';
+	$receiver_email = 'hello@agentonlineweb.com';
 
 	// Email Receiver Name for SMTP Email
-	$receiver_name 	= 'For-Jan';
+	$receiver_name 	= 'agent';
 
 	// Email Subject
 	$subject = 'Connect Form';
@@ -18,7 +18,7 @@ if( ! empty( $_POST['email'] ) ) {
 
 	$from 	= $_POST['email'];
 	$name 	= isset( $_POST['name'] ) ? $_POST['name'] : '';
-	$phone 	= isset( $_POST['phone'] ) ? $_POST['phone'] : '';
+	// $phone 	= isset( $_POST['phone'] ) ? $_POST['phone'] : '';
 	$comment= isset( $_POST['comment'] ) ? $_POST['comment'] : '';
 	
 	if( ! empty( $grecaptchav3_secret_key ) && ! empty( $_POST['g-recaptcha-response'] ) ) {
