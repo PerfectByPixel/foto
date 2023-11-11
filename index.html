@@ -170,7 +170,7 @@
 								<button class="text-dark ff-bebasneue text-dark bg-light-green fs-button border-none margin-block-start-5rem" type="submit" data-type="button-primary">SEND TO US!</button>
 							</form>
 							
-							<div id="message"></div>
+							<div id="message-container"></div>
 							
 							<script>
 								$(document).ready(function () {
@@ -188,13 +188,13 @@
 												comment: $('#comment').val()
 											},
 											success: function (data) {
-												// Display success message
-												$('#message').html('<p class="success-message">Form submitted successfully!</p>');
+												// Display success message below the form
+												$('#message-container').html('<p class="success-message">Form submitted successfully!</p>');
 												// You can add further actions here if needed.
 											},
 											error: function (err) {
-												// Display error message
-												$('#message').html('<p class="error-message">Error submitting form. Please check your data and try again.</p>');
+												// Display error message below the form
+												$('#message-container').html('<p class="error-message">Error submitting form. Please check your data and try again.</p>');
 												console.log(err);
 												// Handle errors here.
 											}
