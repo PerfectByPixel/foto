@@ -157,13 +157,14 @@
 							<header>
 								<h2 class="fs-heading ff-ralewy text-white">Send us a message</h2>
 							</header>
-							<form class="flow" method="POST">
+							<form id="#myForm" class="flow" method="POST">
 								<div>
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="name" name="name" placeholder="Your Name" required>
 								</div>
 								<div class="spac-input">
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="email" name="email" placeholder="Email" required>
 								</div>
+								<input type="hidden" name="_captcha" value="false">
 								<div class="spac-input">
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="comment" name="comment" placeholder="Comment" required>
 								</div>
@@ -173,17 +174,22 @@
 							<div id="message-container"></div>
 							
 							<script>
+								$(document).ready(function () {
+    						$('#myForm').submit(function (event) {
 							$.ajax({
 									method: 'POST',
 									url: 'https://formsubmit.co/ajax/konrad.nielub@wp.pl',
 									dataType: 'json',
 									accepts: 'application/json',
 									data: {
-											name: "FormSubmit",
-											message: "I'm from Devro LABS"
+										name: $('#name').val(),
+										email: $('#email').val(),
+										comment: $('#comment').val()
 									},
 									success: (data) => console.log(data),
 									error: (err) => console.log(err)
+									});
+								});
 							});
 							</script>
 							
