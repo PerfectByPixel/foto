@@ -157,7 +157,7 @@
 							<header>
 								<h2 class="fs-heading ff-ralewy text-white">Send us a message</h2>
 							</header>
-							<form id="myForm" action="https://formsubmit.co/konrad.nielub@wp.pl" class="flow" method="POST">
+							<form id="myForm" action="https://formsubmit.co/ajax/konrad.nielub@wp.pl" class="flow" method="POST">
 								<div>
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="name" name="name" placeholder="Your Name" required>
 								</div>
@@ -169,7 +169,9 @@
 								</div>
 								<button class="text-dark ff-bebasneue text-dark bg-light-green fs-button border-none margin-block-start-5rem" type="submit" data-type="button-primary">SEND TO US!</button>
 							</form>
+							
 							<div id="message"></div>
+							
 							<script>
 								$(document).ready(function () {
 									$('#myForm').submit(function (event) {
