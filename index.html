@@ -14,7 +14,6 @@
 		<meta name="keywords" content="">
 		<meta name="description" content="">
 		<title>Fotowoltaika</title>
-		<script src="main.js" defer></script>
 	</head>
 	<body>
 
@@ -157,18 +156,18 @@
 							<header>
 								<h2 class="fs-heading ff-ralewy text-white">Send us a message</h2>
 							</header>
+							
 							<form action="contact-form.php" class="flow" method="POST">
 								<div>
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="name" name="name" placeholder="Your Name" required>
 								</div>
 								<div class="spac-input">
-									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="email" name="email" placeholder="Email" required>
+									<input class="style-input ff-open-sans fw-regular fs-description" type="email" id="email" name="email" placeholder="Email" required>
 								</div>
-								<input type="hidden" name="_captcha" value="false">
 								<div class="spac-input">
 									<input class="style-input ff-open-sans fw-regular fs-description" type="text" id="comment" name="comment" placeholder="Comment" required>
 								</div>
-								<input type="hidden" name="redirect" value="">
+									<input type="hidden" name="redirect" value="">
 								<button class="text-dark ff-bebasneue text-dark bg-light-green fs-button border-none margin-block-start-5rem" type="submit" data-type="button-primary">SEND TO US!</button>
 								<div class="form-results d-none"></div>
 							</form>
@@ -250,6 +249,5 @@
 			</footer>
 
 		</main>
-		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	</body>
 </html>
